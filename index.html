@@ -1,16 +1,21 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <html>
     <head>
         <title>初めてのVue.js</title>
         <script src="https://unpkg.com/vue@2.5.17"></script>
     </head>
     <body>
-        <div id="app"></div>
+        <div id="app">
+            <p>
+                {{ message }}
+            </p>
+        </div>
         <script>
-            new Vue({
-                template: '<p>{{msg}}</p>',
-                data: {msg: 'Hello, World!'}
-            }).$mount('#app')
+            const vm = new Vue({
+                el: '#app',
+                data: {message: 'こんにちは'}
+            })
         </script>
     </body>
 </html>
