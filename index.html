@@ -8,13 +8,21 @@
     <body>
         <div id="app">
             <p>
-                {{ message }}
+                {{ items[0].name }}: {{ items[0].price }} x {{ items[0].quantity }}
+            </p>
+            <p>
+                フィルタ処理例: {{1000 | numberWithDelimiter}}
             </p>
         </div>
+        <button id="b-button" v-bind:title="loggedInButton" v-bind:disabled="!canBuy">購入</button>
+        <script src="app.js"></script>
         <script>
-            const vm = new Vue({
-                el: '#app',
-                data: {message: 'こんにちは'}
+            var vm = new Vue({
+                el: '#b-button',
+                data: {
+                    loggedInButton: 'ログイン済みのため購入できます。',
+                    canBuy: false
+                }
             })
         </script>
     </body>
